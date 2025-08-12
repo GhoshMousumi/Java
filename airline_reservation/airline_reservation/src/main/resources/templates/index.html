@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Airline Reservation</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<h1>Search Flights</h1>
+
+<form th:action="@{/search}" method="post">
+    <label>Source:</label>
+    <input type="text" name="source" required/>
+
+    <label>Destination:</label>
+    <input type="text" name="destination" required/>
+
+    <label>Date:</label>
+    <input type="date" name="date" required/>
+
+    <button type="submit">Search</button>
+</form>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>

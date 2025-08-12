@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+
+<h1>Booking Confirmed!</h1>
+
+<p>Thank you, <span th:text="${booking.passengerName}"></span>, for your booking.</p>
+
+<table>
+    <tr>
+        <th>Flight Number</th>
+        <td th:text="${booking.flight.flightNumber}"></td>
+    </tr>
+    <tr>
+        <th>From</th>
+        <td th:text="${booking.flight.source}"></td>
+    </tr>
+    <tr>
+        <th>To</th>
+        <td th:text="${booking.flight.destination}"></td>
+    </tr>
+    <tr>
+        <th>Travel Class</th>
+        <td th:text="${booking.travelClass}"></td>
+    </tr>
+    <tr>
+        <th>Seats</th>
+        <td th:text="${booking.seats}"></td>
+    </tr>
+    <tr>
+        <th>Total Price</th>
+        <td th:text="${booking.totalPrice}"></td>
+    </tr>
+    <tr>
+        <th>Booking Time</th>
+        <td th:text="${#dates.format(booking.bookingTime, 'dd-MM-yyyy HH:mm')}"></td>
+    </tr>
+</table>
+
+<a href="/" style="display:block; text-align:center;">Book Another Flight</a>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Flight</title>
+    <!-- Link to CSS in static folder -->
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+
+<h1>Book Your Flight</h1>
+
+<!-- Show error message if present -->
+<div th:if="${error}" class="error-message" th:text="${error}"></div>
+
+<form th:action="@{/booking/book}" method="post">
+    <input type="hidden" name="flightId" th:value="${flight.id}" />
+
+    <label>Flight Number:</label>
+    <input type="text" th:value="${flight.flightNumber}" readonly />
+
+    <label>Passenger Name:</label>
+    <input type="text" name="name" placeholder="Your full name" required />
+
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="you@example.com" required />
+
+    <label>Phone:</label>
+    <input type="text" name="phone" placeholder="+91 9876543210" required />
+
+    <label>Travel Class:</label>
+    <select name="travelClass" required>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+    </select>
+
+    <label>Number of Seats:</label>
+    <input type="number" name="seats" min="1" max="10" value="1" required />
+
+    <button type="submit">Book Now</button>
+</form>
+
+<!-- Link to JS in static folder -->
+<script th:src="@{/script.js}"></script>
+
+</body>
+</html>
