@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @Data
 @Entity
+@Table(name = "BOOKING")
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +21,7 @@ public class Booking {
     private Flight flight;
 
     private String passengerName;
-    private String email;
+    private String passengerEmail;
     private String phone;
     private String travelClass;
     private int seats;

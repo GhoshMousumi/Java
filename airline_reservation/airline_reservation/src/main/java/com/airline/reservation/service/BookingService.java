@@ -34,7 +34,7 @@ public class BookingService {
         Booking b = new Booking();
         b.setFlight(f);
         b.setPassengerName(name);
-        b.setEmail(email);
+        b.setPassengerEmail(email);
         b.setPhone(phone);
         b.setTravelClass(travelClass);
         b.setSeats(seats);

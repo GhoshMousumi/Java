@@ -28,8 +28,8 @@
         <td th:text="${flight.flightNumber}"></td>
         <td th:text="${flight.source}"></td>
         <td th:text="${flight.destination}"></td>
-        <td th:text="${#dates.format(flight.departureTime, 'dd-MM-yyyy HH:mm')}"></td>
-        <td th:text="${#dates.format(flight.arrivalTime, 'dd-MM-yyyy HH:mm')}"></td>
+        <td th:text="${flight.departureTime}"></td>
+        <td th:text="${flight.arrivalTime}"></td>
         <td th:text="${flight.economySeats}"></td>
         <td th:text="${flight.businessSeats}"></td>
         <td th:text="${flight.economyPrice}"></td>
